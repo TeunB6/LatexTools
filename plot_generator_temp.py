@@ -1,7 +1,8 @@
 from src.utils import load_csv
+from tkinter.filedialog import askopenfilename
 
-data = load_csv("./plotdata.csv")
+data = load_csv(askopenfilename())
 
 for r in data:
     if r != []:
-        print(f"({r[0]}, {r[-2]}) +- ({0.1}, {r[-1]})")
+        print(f"({r[1]}, {r[-2]}) +- ({r[2]}, {r[-1]})")

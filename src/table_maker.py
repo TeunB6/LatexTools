@@ -7,7 +7,7 @@ class TableMaker:
         
     def create_table(self) -> list[str]:
         print("Creating Table with Settings: " + f"Hor: {self._draw_horizontal_lines}; Ver: {self._draw_vertical_lines}")
-        table_latex = (["\\begin{tabular} {" + ("|" + "c | " * self.row_len) + '}\n'] if self._draw_vertical_lines
+        table_latex = (["\\begin{tabular} {" + "c | " * (self.row_len - 1) + "c" + '}\n'] if self._draw_vertical_lines
                         else  ["\\begin{tabular} {" + ("c " * self.row_len) + '}\n'])
         for row in self.data:
             row_latex = ''.join(f"{c} & " for c in row[:-1]) + f"{row[-1]} \\\\ \n"

@@ -1,0 +1,10 @@
+\begin{tabular} {c | c | c | c}
+x & y & z & a \\ 
+\hline 
+1 & 2 & 3 & 4 \\ 
+\hline 
+2 & 3 & 4 & 5 \\ 
+\hline 
+1 & 2 & 3 & 4 \\ 
+\hline 
+\end{tabular}

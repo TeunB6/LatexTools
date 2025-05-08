@@ -15,7 +15,7 @@ class TableTool:
         self.window.geometry("1400x500")
         self.window.title("Latex Table Tool")
         self.window.withdraw()
-        self.path = askopenfilename()
+        self.path = askopenfilename(initialdir=os.path.realpath(__file__))
         self.window.deiconify()
         self.label = tk.Label(self.window)
         
@@ -64,7 +64,7 @@ class TableTool:
     
     def save(self) -> None:
         try:
-            with open(f'{os.path.splitext(self.path)[0]}.txt', 'w') as f:
+            with open(f'{os.path.splitext(self.path)[0]}-table.txt', 'w') as f:
                 f.writelines(self._tex)
         finally:
             pass
